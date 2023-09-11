@@ -1,25 +1,41 @@
+# def Merge_array(array);
+
+
+
 def Merge_array(left,right,mid,array):
     """
     Return the Sorted Merged array
+
+    Points to be Noted: Please check on the values for right, for loop it will be(right+1)
+    Check for the  while condition line 16
     """
-    print(left,right,mid,array,array[left],array[right],array[mid],array[mid+1],mid+1)
+    # print(left,right,mid,array,array[left],array[right],array[mid],array[mid+1],mid+1)
     temp_array=[]
     low=left
     high = mid+1
     while (low<=mid)&(high<=right):
-        print(low,high)
-        if array[low]<array[high]:
+        print(low,high,"low-high")
+        if array[low]<=array[high]:
             temp_array.append(array[low])
             low+=1
         else:
             temp_array.append(array[high])
             high+=1
-    if low==mid:
-        temp_array.extend(array[high:(right+1)])
-    elif high==right:
-        temp_array.extend(array[low:(mid+1)])    
+    # print(temp_array,"temp_array")
+    
 
-    array[left:right] = temp_array[left:(right+1)]
+    while low<=mid:
+        temp_array.append(array[low])
+        low+=1
+    while high<=right:
+        temp_array.append(array[high])
+        high+=1
+    for i in range(left,(right+1)):
+        array[i]=temp_array[i-left]  
+
+    # array[left:right] = temp_array[left:(right+1)]
+    # print(temp_array,"temp_array2")
+    # print(array,"array")
     return array
 
 
@@ -32,7 +48,6 @@ def Divide_array(left,right,array):
     if left==right:
         return 
     mid=(left+right)//2
-    # print(mid)
     Divide_array(left,mid,array)
     Divide_array(mid+1,right,array)
     array = Merge_array(left,right,mid,array)
@@ -40,9 +55,9 @@ def Divide_array(left,right,array):
     return array
 
 def main():
-    array =[18,2,9,6,1,3,4]
+    array =[1,5,6,1,2,3,0,4]
 
-    print(Divide_array(0,len(array)-1,array))
+    print("The sorted array is"Divide_array(0,len(array)-1,array))
     
     
 if __name__=="__main__":
