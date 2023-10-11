@@ -1,7 +1,7 @@
 def sub_sequence(current_index,empty_array,array):
     # print("sub sequence")
     if current_index>len(array)-1:
-        print(empty_array)
+        print("sub_sequnce",empty_array)
         return empty_array
     
     empty_array.append(array[current_index])
@@ -14,7 +14,7 @@ def sub_sequence(current_index,empty_array,array):
 def sub_sequence_sum(current_index,empty_array,array,key_sum,summation_new_array):
     if current_index>len(array)-1:
         if summation_new_array==key_sum:
-            print(empty_array,"for sub sequence")
+            print("for sub_sequence sum",empty_array)
         return 
     
     empty_array.append(array[current_index])
@@ -29,7 +29,7 @@ def sub_sequence_sum(current_index,empty_array,array,key_sum,summation_new_array
 def only_one_sub_sequence_sum(current_index,empty_array,array,key_sum,summation_new_array):
     if current_index>len(array)-1:
         if summation_new_array==key_sum:
-            print(empty_array,"for sub sequence")
+            print("for one sub_sequence",empty_array)
             return True
         return False
     
@@ -66,9 +66,10 @@ def give_count_sub_sequence_sum(current_index,empty_array,array,key_sum,summatio
 
 def main():
     
-    sub_sequence(0,[],[3,2,1])
+    sub_sequence(0,[],[3,1,2])
     sub_sequence_sum(0,[],[1,2,1,1,1,3,4],3,0)
-    print(only_one_sub_sequence_sum(0,[],[1,2,1,1,1,3,4],16,0))
-    print(give_count_sub_sequence_sum(0,[],[1,2,1,1,1,3,4],3,0))
+
+    print("for pne sub sequence",only_one_sub_sequence_sum(0,[],[1,2,1,1,1,3,4],3,0))
+    print("for counting sequence",give_count_sub_sequence_sum(0,[],[1,2,1,1,1,3,4],3,0))
 if __name__=="__main__":
     main()  #/mnt/d/programming/CODE/Subsequences.py
