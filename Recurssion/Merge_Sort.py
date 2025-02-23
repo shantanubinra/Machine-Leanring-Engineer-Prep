@@ -57,7 +57,7 @@ def Divide_array(left,right,array):
 def main():
     array =[1,5,6,1,2,3,0,4]
 
-    print("The sorted array is"Divide_array(0,len(array)-1,array))
+    print("The sorted array is",Divide_array(0,len(array)-1,array))
     
     
 if __name__=="__main__":
