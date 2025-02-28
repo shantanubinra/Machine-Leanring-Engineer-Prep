@@ -1,10 +1,3 @@
-"""
-****
-****
-****
-
-"""
-
 def square_pattern(n):
     for i in range(n):
         print("*"*n)
@@ -115,17 +108,71 @@ pattern13(5)
         
 print("pattern13====================================================================================")
 
-# def pattern13(n):
-#     counter=1
-#     for i in range("A",n+1):
-#         for j in range(1,i+1):
-#             print(counter,end=" ")
-#             counter+=1
-#         print()
+def pattern14(n):
+    for i in range(1, n):
+        for j in range(65, 65+i):
+            a = chr(j)
+            print(a, end="")
+        print()
 
-# pattern13(5)
+pattern14(5)
 
-print("pattern13====================================================================================")
+print("pattern14====================================================================================")
+
+def pattern15(n):
+    for i in range(n,0,-1):
+        for j in range(65, 65+i):
+            a = chr(j)
+            print(a, end="")
+        print()
+
+pattern15(5)
+
+print("pattern15====================================================================================")
+
+def pattern16(n):
+    character=65
+    for i in range(1,n):
+        
+        print(f"{chr(character)}"*i)
+        character+=1
+
+pattern16(5)
+
+print("pattern16====================================================================================")
+
+def pattern17(n):
+    # def euqilateral_angle_triangle(n):
+    # for i in range(1,n+1):
+    #     print(" "*(n-i)+"*"*int((2*i)-1))
+
+    for i in range(1,n):
+        print(" "*(n-i),end="")
+        for j in range(65,65+i):
+        #     print(f"{j}",end="")
+            print(f"{chr(j)}",end="")
+        for j in range(65+i-2,64,-1):
+            # print(f"{j}",end="")
+            print(f"{chr(j)}",end="")
+        print()
+
+pattern17(5)
+
+print("pattern17====================================================================================")
+
+
+def pattern18(n):
+
+    for i in range(1,n+1):
+
+        for j in range(65+n-i,65+n):
+            print(f"{chr(j)}",end="")
+        print()
+
+pattern18(5)
+
+print("pattern18====================================================================================")
+
 
 def pattern19(n):
     for i in range(n,0,-1):
@@ -152,3 +199,5 @@ def pattern21(n):
         else:
             print("* "," "*(n-2),"*")
 pattern21(5)
+
+print(chr(65))
